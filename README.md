@@ -4,7 +4,7 @@
 
 **Model Architecture**
 
-<img src="Fig1.jpg" width="900px" class="aligncenter">
+<img src="Fig1.jpg" width="900px">
 
 **Running Environment**
 
