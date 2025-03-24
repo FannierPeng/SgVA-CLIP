@@ -4,7 +4,7 @@
 
 **Model Architecture**
 
-![](./Fig1 (17).pdf)
+![](./Fig1.pdf)
 
 **Running Environment**
 
