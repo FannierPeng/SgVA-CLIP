@@ -1,16 +1,10 @@
-<style>
-img{
-    width: 80%;
-    padding-left: 10%;
-}
-</style>
 # SgVA-CLIP: Semantic-guided Visual Adapting of Vision-Language Models for Few-shot Image Classification
 [[Paper]](https://ieeexplore.ieee.org/abstract/document/10243119)
 [[Arxiv]](https://arxiv.org/abs/2211.16191)
 
 **Model Architecture**
 
-![](Fig1.jpg)
+<img src="Fig1.jpg" width="900px" class="aligncenter">
 
 **Running Environment**
 
