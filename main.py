@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 from torch.autograd import Variable
 from focalloss import FocalLoss
 from models.resnet12_2 import resnet12
-from models.coop_4_pre import CustomCLIP, TextEncoder, PromptLearner, save_image_tensor, load_pretrained_weights
+from models.coop_4 import CustomCLIP, TextEncoder, PromptLearner, save_image_tensor, load_pretrained_weights
 from models.meta_part_inference_mini import ProtoComNet
 from models.PredTrainHead import LinearClassifier, LinearRotateHead
 from clip import clip
@@ -1585,7 +1585,7 @@ def get_cmap(n, name='hsv'):
 def tSNE(opt, dataset_train_notfm, dataset_val, dataset_test, data_loader):
     # Dataloader of Gidaris & Komodakis (CVPR 2018)
     test_way =10
-    query_sample = 300
+    query_sample = 150
     episodes = 1
     val_shot = 0
 
@@ -1797,9 +1797,9 @@ def tSNE(opt, dataset_train_notfm, dataset_val, dataset_test, data_loader):
     classes = [str(i) for i in range(test_way)]
     plt.xticks([])
     plt.yticks([])
-    plt.title('(b) Vision-specific features', fontsize=8, y=-0.1)
+    plt.title('(b) task-specific visual features', fontsize=8, y=-0.1)
     plt.legend(handles=scatter.legend_elements()[0], labels=classes, fontsize=6, loc='upper left',ncol=2, borderaxespad=0)
-    plt.savefig("./Fig5_x4.pdf",dpi=500)
+    plt.savefig("./Fig5_x1207.pdf",dpi=500)
 
 def py_intersect(string_1, string_2):
     """
@@ -2642,4 +2642,4 @@ if __name__ == '__main__':
         
 
     elif opt.phase == 'tSNE':
-        visualize(opt, dataset_train_notfm, dataset_val, dataset_test, data_loader)
+        tSNE(opt, dataset_train_notfm, dataset_val, dataset_test, data_loader)
