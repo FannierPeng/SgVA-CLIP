@@ -1,7 +1,7 @@
 # SgVA-CLIP: Semantic-guided Visual Adapting of Vision-Language Models for Few-shot Image Classification
 参考训练脚本
 ```
-python -W ignore main_5.py --phase metatrain --gpu 0 --save-path ”“
+python -W ignore main_5.py --phase metatrain --gpu 0 --save-path ''
 --train-way 50 --test-way 10 --train-shot 16 --val-shot 16 --train-query 50 --val-query 50 
 --loss newi2i+kd+i2t
 --para-update prompt+v_adapter 
