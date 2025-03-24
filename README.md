@@ -31,8 +31,8 @@ python -W ignore main_5.py --phase metatrain --gpu 0 --save-path ''
 --n-ctx 4
 --lr-decay cosine
 --episodes-per-batch 1
---lam2 0.1
 ```
+注意：train-way最好要能被n-classes整除，test-way和val-shot是无关量，可以不用设置。
 
 **Test Example**
 
@@ -55,8 +55,8 @@ python -W ignore main_5.py --phase metatest --gpu 0 --save-path ''
 --n-ctx 4 
 --lr-decay cosine 
 --episodes-per-batch 1 
---lam2 0.1
 ```
+注意：train-way最好要能被n-classes整除，test-way和val-shot是无关量，可以不用设置。
 
 **Cite**
 ```
