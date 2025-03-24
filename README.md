@@ -13,7 +13,7 @@ Refer to [CLIP](https://github.com/openai/CLIP) and [CoOp](https://github.com/Ka
 **Train Example**
 
 ```
-python -W ignore main_5.py --phase metatrain --gpu 0 --save-path ''
+python -W ignore main.py --phase metatrain --gpu 0 --save-path ''
 --train-way 50 --test-way 10 --train-shot 16 --val-shot 16 --train-query 50 --val-query 50
 --loss newi2i+kd+i2t
 --para-update prompt+v_adapter
@@ -37,7 +37,7 @@ python -W ignore main_5.py --phase metatrain --gpu 0 --save-path ''
 **Test Example**
 
 ```
-python -W ignore main_5.py --phase metatest --gpu 0 --save-path ''
+python -W ignore main.py --phase metatest --gpu 0 --save-path ''
 --train-way 49 --test-way 10 --train-shot 16 --val-shot 16 --train-query 50 --val-query 50 
 --loss newi2i+kd+i2t 
 --para-update prompt+v_adapter 
