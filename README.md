@@ -4,7 +4,7 @@
 
 **Model Architecture**
 
-![](Fig1.jpg)
+![](Fig1.jpg){:height="85%" width="85%"}
 
 **Running Environment**
 
