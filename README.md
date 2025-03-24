@@ -2,6 +2,10 @@
 [[Paper]](https://ieeexplore.ieee.org/abstract/document/10243119)
 [[Arxiv]](https://arxiv.org/abs/2211.16191)
 
+**Model Architecture**
+
+![](Fig1 (17).pdf)
+
 **Running Environment**
 
 Refer to [CLIP](https://github.com/openai/CLIP) and [CoOp](https://github.com/KaiyangZhou/CoOp)
@@ -53,9 +57,6 @@ python -W ignore main_5.py --phase metatest --gpu 0 --save-path ''
 --episodes-per-batch 1 
 --lam2 0.1
 ```
-**Model Architecture**
-
-![]()
 
 **Cite**
 ```
