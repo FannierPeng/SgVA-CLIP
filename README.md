@@ -15,9 +15,11 @@ Refer to [CLIP](https://github.com/openai/CLIP) and [CoOp](https://github.com/Ka
 **Change _IMAGE_DATASET_DIR in dataset/xx.py**
 
 For example, change _IMAGE_DATASET_DIR in dataset/dtd.py (Every dataset loading python file should be changed.)
+
 注意：每个数据集路径下的class_names.txt是一个所有类别名逐行排列的txt文件（不带序号），如果没有可以自行生成。The class_names.txt under each dataset path is a txt file in which all category names are arranged line by line, without serial numbers.
 
 **Dataset Preparation**
+
 For data preparation, please refer to [CoOp](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md)
 
 **Train Example**
