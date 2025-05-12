@@ -267,7 +267,7 @@ class MiniImageNetPP(data.Dataset):
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
         if 'userhome' in impath:
-            impath = impath.replace(OLD_IMAGE_DATASET_DIR, _IMAGE_DATASET_DIR)
+            impath = impath.replace(OLD_MINI_IMAGENET_DATASET_DIR, MINI_IMAGENET_DATASET_DIR)
         img = Image.fromarray(img)
         if self.transform is not None:
             img = self.transform(img)
