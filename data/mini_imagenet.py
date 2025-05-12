@@ -27,7 +27,7 @@ from pdb import set_trace as breakpoint
 
 
 # Set the appropriate paths of the datasets here.
-OLD_MINI_IMAGENET_DATASET_DIR = '/userhome/CLIP/data/MiniImagenet'
+# OLD_MINI_IMAGENET_DATASET_DIR = '/userhome/CLIP/data/MiniImagenet'
 _MINI_IMAGENET_DATASET_DIR = ''
 
 def buildLabelIndex(labels):
@@ -266,8 +266,6 @@ class MiniImageNetPP(data.Dataset):
         img, label = self.data[index], self.labels[index]
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
-        if 'userhome' in impath:
-            impath = impath.replace(OLD_MINI_IMAGENET_DATASET_DIR, MINI_IMAGENET_DATASET_DIR)
         img = Image.fromarray(img)
         if self.transform is not None:
             img = self.transform(img)
