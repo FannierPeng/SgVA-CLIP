@@ -30,7 +30,9 @@ from pdb import set_trace as breakpoint
 
 
 # Set the appropriate paths of the datasets here.
-_IMAGENET_DATASET_DIR = '/userhome/CLIP/data/imagenet/'
+OLD_IMAGENET_DATASET_DIR = '/userhome/CLIP/data/imagenet/'
+_IMAGENET_DATASET_DIR = ''
+
 def buildLabelIndex(labels):
     label2inds = {}
     for idx, label in enumerate(labels):
@@ -195,6 +197,8 @@ class ImageNet(data.Dataset):
         impath, label = self.impaths[index], self.labels[index]
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
+        if 'userhome' in impath:
+            impath = impath.replace(OLD_IMAGE_DATASET_DIR, _IMAGE_DATASET_DIR)
         img = Image.open(impath)
         img = img.convert('RGB')
         img = self.transform(img)
