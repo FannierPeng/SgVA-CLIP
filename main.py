@@ -8,7 +8,7 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
-from focalloss import FocalLoss
+# from focalloss import FocalLoss
 from models.resnet12_2 import resnet12
 from models.coop_4 import CustomCLIP, TextEncoder, PromptLearner, save_image_tensor, load_pretrained_weights
 from models.meta_part_inference_mini import ProtoComNet
