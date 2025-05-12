@@ -10,6 +10,14 @@
 
 Refer to [CLIP](https://github.com/openai/CLIP) and [CoOp](https://github.com/KaiyangZhou/CoOp)
 
+**Change base_datadir, base_dir in main.py**
+**Change _IMAGE_DATASET_DIR in dataset/xx.py**
+For example, change _IMAGE_DATASET_DIR in dataset/dtd.py (Every dataset loading python file should be changed.)
+注意：class_names.txt是一个所有类别名逐行排列的txt文件，不带序号，只有类别名。class_names.txt is a txt file in which all category names are arranged line by line, without serial numbers.
+
+**Dataset Preparation**
+For data preparation, please refer to [CoOp](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md)
+
 **Train Example**
 
 ```
@@ -32,7 +40,7 @@ python -W ignore main.py --phase metatrain --gpu 0 --save-path ''
 --lr-decay cosine
 --episodes-per-batch 1
 ```
-注意：train-way最好要能被n-classes整除，test-way和val-shot是无关量，可以不用设置。
+注意：train-way最好要能被n-classes整除（如果n-classes是质数，建议train-way=n-classes），测试时test-way也要能被n-classes整除（如果n-classes是质数，建议test-way=1），val-shot可以和train-shot保持一致。
 
 **Test Example**
 
@@ -56,7 +64,7 @@ python -W ignore main.py --phase metatest --gpu 0 --save-path ''
 --lr-decay cosine 
 --episodes-per-batch 1 
 ```
-注意：train-way最好要能被n-classes整除，test-way和val-shot是无关量，可以不用设置。
+注意：测试状态下使用--phase metatest；train-way最好要能被n-classes整除（如果n-classes是质数，建议train-way=n-classes），测试时test-way也要能被n-classes整除（如果n-classes是质数，建议test-way=1），val-shot可以和train-shot保持一致。
 
 **Cite**
 ```
