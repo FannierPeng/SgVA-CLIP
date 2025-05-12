@@ -25,7 +25,8 @@ sys.path.append("..")
 from utils import Datum
 
 # Set the appropriate paths of the datasets here.
-_IMAGE_DATASET_DIR = '/userhome/CLIP/data/caltech101/'
+OLD_IMAGE_DATASET_DIR = '/userhome/CLIP/data/caltech101/'
+_IMAGE_DATASET_DIR = ''
 
 IGNORED = ["BACKGROUND_Google", "Faces_easy"]
 NEW_CNAMES = {
@@ -301,6 +302,8 @@ class Caltech101(data.Dataset):
         impath, label = self.impaths[index], self.labels[index]
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
+        if 'userhome' in impath:
+            impath = impath.replace(OLD_IMAGE_DATASET_DIR, _IMAGE_DATASET_DIR)
         img = Image.open(impath)
         img = img.convert('RGB')
         img = self.transform(img)
