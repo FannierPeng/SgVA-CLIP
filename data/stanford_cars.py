@@ -25,7 +25,9 @@ from utils import Datum
 from data.oxford_flowers import buildLabelIndex, read_json, read_json, convert, save_split, read_split, listdir_nohidden, read_and_split_data, split_trainval
 # Set the appropriate paths of the datasets here.
 
-_IMAGE_DATASET_DIR = '/userhome/CLIP/data/stanford_cars/'
+OLD_IMAGE_DATASET_DIR = '/userhome/CLIP/data/stanford_cars/'
+_IMAGE_DATASET_DIR = ''
+
 # split_path = os.path.join(_IMAGE_DATASET_DIR, "split_zhou_StanfordCars.json")
 # data = read_json(split_path)
 # val = {}
@@ -153,6 +155,8 @@ class StanfordCars(data.Dataset):
         impath, label = self.impaths[index], self.labels[index]
         # doing this so that it is consistent with all other datasets
         # to return a PIL Image
+        if 'userhome' in impath:
+            impath = impath.replace(OLD_IMAGE_DATASET_DIR, _IMAGE_DATASET_DIR)
         img = Image.open(impath)
         img = img.convert('RGB')
         img = self.transform(img)
